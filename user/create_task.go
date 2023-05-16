@@ -1,8 +1,8 @@
-package repository
+package user
 
-import "github.com/gin-gonic/gin"
+import "fmt"
 
-type Task struct {
+type TaskParams struct {
 	ID          int    `json:"id"`
 	Title       string `json:"title"`
 	Description string `json:"description"`
@@ -10,6 +10,6 @@ type Task struct {
 	Completed   bool   `json:"completed"`
 }
 
-func (r *repository) Create_task(c *gin.Context) {
-	return
+func (u userAppService) Create_task() {
+	fmt.Println("hola estoy en create task del user app service")
 }

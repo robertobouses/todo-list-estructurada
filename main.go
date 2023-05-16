@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/robertobouses/todo-list-estructurada/internal"
+	"github.com/robertobouses/todo-list-estructurada/user"
 )
 
 func main() {
@@ -18,18 +19,10 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	usrRepo, err := repository.NewUserRepo(db)
-	fmt.Println(usrRepo)
-	if err != nil {
-		panic(err)
-	}
 
-	usrApp, err := user.NewUserAppService(usrRepo, jwtSvc)
-	fmt.Println(usrApp)
-	if err != nil {
-		panic(err)
-	}
+	fmt.Println(db)
 
-	s := http.NewServer(usrApp, jwtSvc)
+	app := user.NewUserAppService()
+	s := NewServer(app)
 	s.Run("8080")
 }
