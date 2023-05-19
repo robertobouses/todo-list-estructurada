@@ -14,36 +14,4 @@ type RegisterTaskRequest struct {
 
 func (h Handler) RegisterTask(c *gin.Context) {
 
-	//h.app.Create_task
 }
-
-/*var req RegisterTaskRequest
-	if err := c.BindJSON(&req); err != nil {
-		c.AbortWithStatus(http.StatusBadRequest)
-		return
-
-	}
-
-	params := user.CreateTaskParams(req)
-	usr, err := h.app.CreateUser(params)
-	if errors.Is(err, user.ValidationError) {
-		c.AbortWithStatus(http.StatusBadRequest)
-		fmt.Println(usr)
-		fmt.Print(err)
-		return
-	}
-	if err != nil {
-		c.AbortWithStatus(http.StatusInternalServerError)
-		return
-	}
-
-	c.JSON(http.StatusOK, RegisterResponse{
-		ID:        usr.ID.String(),
-		Email:     usr.Email,
-		FirstName: usr.FirstName,
-		LastName:  usr.LastName,
-		Password:  usr.Password,
-	},
-	)
-	fmt.Println("c.JSON password_____________", usr.Password)
-}	*/

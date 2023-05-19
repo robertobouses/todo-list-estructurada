@@ -32,7 +32,7 @@ func NewServer(app APP) Server {
 
 func (s *Server) Run(port string) error {
 	usr := s.engine.Group("/task")
-	usr.POST("/", Handler.RegisterTask())
+	usr.POST("/", s.handler.RegisterTask)
 	//usr.GET("/print", s.handler.app.Print_task())
 	return s.engine.Run(fmt.Sprintf(":%s", port))
 

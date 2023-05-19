@@ -1,6 +1,8 @@
 package user
 
-import "fmt"
+import (
+	"github.com/sirupsen/logrus"
+)
 
 type TaskParams struct {
 	ID          int    `json:"id"`
@@ -11,5 +13,7 @@ type TaskParams struct {
 }
 
 func (u userAppService) Create_task() {
-	fmt.Println("hola estoy en create task del user app service")
+
+	logrus.Info("hola estoy en create task del user app service")
+	//fmt.Println("hola estoy en create task del user app service")
 }
